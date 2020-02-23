@@ -49,10 +49,14 @@ and change "rabehboubakri" in values.yaml file by your dockerID
     helm repo add stable https://kubernetes-charts.storage.googleapis.com
 		
 * Deploy the Helm chart with the helm install command. This will create three pods within the cluster, one for the Nginx service, another for the MariaDB service, and the third for the PHP-FPM application.
-     helm install phpfpm stable/mariadb  --set mariadb.mariadbRootPassword=mini,mariadb.mariadbUser=mini,mariadb.mariadbPassword=mini,mariadb.mariadbDatabase=mini
+                                                                                                helm install phpfpm stable/mariadb  --set mariadb.mariadbRootPassword=mini,mariadb.mariadbUser=mini,mariadb.mariadbPassword=mini,mariadb.mariadbDatabase=mini
 		 
 * Run the kubectl get pods command to get a list of running pods:
-     kubectl get pods
+                  kubectl get pods
 		 
 * Check the logs of the application pod. POD-NAME is a placeholder; remember to replace it with the right value.
-        kubectl logs -f POD-NAME
+                  kubectl logs -f POD-NAME
+* get the application URL:
+                               minikube service phpfpm-php-app-nginx --url
+                               
+* Enter the resulting URL in browser to access the application
