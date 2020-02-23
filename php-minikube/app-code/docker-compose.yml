@@ -6,7 +6,7 @@ networks:
 
 services:
   phpfpm:
-    image: USERNAME/phpfpm-app:0.1.0
+    image: rabehboubakri/phpfpm-app:0.1.0
     networks:
       - app-tier
   nginx:
